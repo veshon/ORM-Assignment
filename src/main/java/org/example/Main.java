@@ -16,11 +16,16 @@ public class Main {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Query query=session.createQuery("from Author ");
+        Query query = session.createQuery(" FROM Book WHERE publicationYear > '2010' ");
 
-        List<Author> authorList=query.list();
+  /*      List<Author> authorList=query.list();
         for (Author a:authorList) {
             System.out.println(a.getName());
+        }*/
+
+        List<Book> books=query.list();
+        for (Book b:books) {
+            System.out.println(b.getTitle());
         }
 
         Book book1 = new Book();
@@ -58,17 +63,17 @@ public class Main {
         bookList.add(book2);
         bookList.add(book3);
 
-        session.save(author1);
+      /*  session.save(author1);
         session.save(author2);
         session.save(author3);
 
         session.save(book1);
         session.save(book2);
-        session.save(book3);
-
+        session.save(book3);*/
+/*
         book1.setAuthor(author1);
         book2.setAuthor(author2);
-        book3.setAuthor(author3);
+        book3.setAuthor(author3)*/;
 
         transaction.commit();
         session.close();
