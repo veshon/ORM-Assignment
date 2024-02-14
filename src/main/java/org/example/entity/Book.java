@@ -10,12 +10,19 @@ public class Book {
     private String id;
     private String title;
     private String publicationYear;
-    private String price;
+    private double price;
 
     @ManyToOne
     private Author author;
 
     public Book() {
+    }
+
+    public Book(String id, String title, String publicationYear, double price) {
+        this.id = id;
+        this.title = title;
+        this.publicationYear = publicationYear;
+        this.price = price;
     }
 
     public Book(Author author) {
@@ -28,13 +35,6 @@ public class Book {
 
     public void setAuthor(Author author) {
         this.author = author;
-    }
-
-    public Book(String id, String title, String publicationYear, String price) {
-        this.id = id;
-        this.title = title;
-        this.publicationYear = publicationYear;
-        this.price = price;
     }
 
     public String getId() {
@@ -61,11 +61,11 @@ public class Book {
         this.publicationYear = publicationYear;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 }

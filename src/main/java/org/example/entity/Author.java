@@ -22,6 +22,14 @@ public class Author {
         this.books = books;
     }
 
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
     public Author(String id, String name) {
         this.id = id;
         this.name = name;
@@ -43,11 +51,4 @@ public class Author {
         this.name = name;
     }
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
 }
