@@ -1,16 +1,15 @@
 HQL Queries
 -----------
 
-01) Query query = session.createQuery(" FROM Book WHERE publicationYear > '2010' ");
-02) Query updatePrice = session.createQuery("UPDATE Book b SET b.price = b.price + (price * 10/100) where b.author = 'Scott'");
-03)
-04) Query average = session.createQuery("SELECT AVG(b.price) FROM Book b");
-05) Query authosWrittenBooksCount = session.createQuery("SELECT a.name, COUNT(b)\n" +
+ Query query = session.createQuery(" FROM Book WHERE publicationYear > '2010' ");
+ Query updatePrice = session.createQuery("UPDATE Book b SET b.price = b.price + (price * 10/100) where b.author = 'Scott'");
+ Query average = session.createQuery("SELECT AVG(b.price) FROM Book b");
+ Query authosWrittenBooksCount = session.createQuery("SELECT a.name, COUNT(b)\n" +
                 "FROM Author a\n" +
                 "JOIN a.books b\n" +
                 "GROUP BY a.name\n");
 07) Done in Author entity and Book entity
-10)
+   
 
 
 Cascade Operation
