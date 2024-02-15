@@ -1,18 +1,20 @@
 package org.example.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Entity
 public class Book {
-@Id
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private String id;
     private String title;
     private String publicationYear;
     private double price;
 
     @ManyToOne
+    @JoinColumn(name = "author_id")
     private Author author;
 
     public Book() {
