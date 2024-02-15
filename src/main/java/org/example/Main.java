@@ -27,8 +27,6 @@ public class Main {
                 "JOIN a.books b\n" +
                 "GROUP BY a.name\n");*/
 
-
-
         List<Book> books=query.list();        // Books After 2010
         for (Book b:books) {
             System.out.println(b.getTitle());
@@ -50,6 +48,7 @@ public class Main {
         }*/
 
 
+/*
 
         Book book1 = new Book();
         book1.setId("B001");
@@ -72,31 +71,35 @@ public class Main {
         Author author1 = new Author();
         author1.setId("A001");
         author1.setName("Scott");
+        author1.setCountry("USA");
 
         Author author2 = new Author();
         author2.setId("A002");
         author2.setName("Emily Henry");
+        author2.setCountry("USA");
 
         Author author3 = new Author();
         author3.setId("A003");
         author3.setName("Ben");
+        author3.setCountry("USA");
 
         List<Book>bookList=new ArrayList<>();
         bookList.add(book1);
         bookList.add(book2);
         bookList.add(book3);
 
-  /*      session.save(author1);
+        session.save(author1);
         session.save(author2);
         session.save(author3);
 
         session.save(book1);
         session.save(book2);
-        session.save(book3);*/
+        session.save(book3);
 
         book1.setAuthor(author1);
         book2.setAuthor(author2);
         book3.setAuthor(author3);
+*/
 
         transaction.commit();
         session.close();

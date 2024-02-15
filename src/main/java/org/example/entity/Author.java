@@ -8,10 +8,11 @@ import java.util.List;
 public class Author {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private String id;
     private String name;
+    private String country;
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     private List<Book> books;
@@ -31,9 +32,10 @@ public class Author {
         this.books = books;
     }
 
-    public Author(String id, String name) {
+    public Author(String id, String name, String country) {
         this.id = id;
         this.name = name;
+        this.country = country;
     }
 
     public String getId() {
@@ -52,4 +54,11 @@ public class Author {
         this.name = name;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }
